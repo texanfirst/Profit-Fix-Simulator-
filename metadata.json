@@ -1,0 +1,6 @@
+{
+  "name": "The Profit Fix Challenge",
+  "description": "An independent student business turnaround simulation game featuring a progressive campaign map, market event cards, live profit math simulators, consultant XP leveling, achievement badges, and printable master certificates.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
