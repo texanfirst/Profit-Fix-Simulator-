@@ -24,24 +24,23 @@ export const CampaignMapView: React.FC<CampaignMapViewProps> = ({
 }) => {
   return (
     <div className="space-y-8 max-w-5xl mx-auto pb-12 animate-fade-in">
-      {/* Top Welcome Hero */}
-      <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-800 relative overflow-hidden">
-        <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -left-10 -top-10 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
+      {/* Top context banner */}
+      <div className="bg-slate-900 text-white rounded-2xl p-4 sm:p-5 shadow-md border border-slate-800 relative overflow-hidden">
+        <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-2">
+          <div className="space-y-1">
             <div className="flex items-center gap-2">
-              <span className="bg-cyan-500/20 text-cyan-300 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full border border-cyan-500/30">
-                Turnaround Command Center
+              <span className="bg-cyan-500/15 text-cyan-300 text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full border border-cyan-500/25">
+                Game Dashboard
               </span>
-              <span className="text-slate-400 text-xs font-semibold">5 Progressive Missions</span>
+              <span className="text-slate-400 text-xs font-semibold">This top bar is just your dashboard.</span>
             </div>
-            <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white">
-              The Profit Fix Simulator
+            <h1 className="text-xl sm:text-2xl font-black tracking-tight text-white">
+              The Profit Fix Challenge
             </h1>
             <p className="text-slate-300 text-xs sm:text-sm max-w-xl leading-relaxed">
-              Run operations day-by-day! Adjust prices, hire staff, buy equipment, resolve sudden crisis dilemmas, and watch your daily revenue and expenses calculate in real time.
+              Your actual first choice is below: pick a game mode, then rescue a business using revenue, expenses, and profit.
             </p>
           </div>
 
@@ -51,10 +50,10 @@ export const CampaignMapView: React.FC<CampaignMapViewProps> = ({
               soundEffects.playSelect();
               onOpenProfile();
             }}
-            className="bg-slate-800/90 border border-slate-700/80 rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:bg-slate-800 hover:border-slate-600 transition shrink-0 group"
+            className="bg-slate-800/80 border border-slate-700/70 rounded-2xl p-3 flex items-center gap-3 cursor-pointer hover:bg-slate-800 hover:border-slate-600 transition shrink-0 group"
           >
             <div 
-              className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl shadow-md group-hover:scale-105 transition"
+              className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shadow-md group-hover:scale-105 transition"
               style={{ backgroundColor: profile.avatarColor }}
             >
               {profile.avatar}
@@ -62,13 +61,13 @@ export const CampaignMapView: React.FC<CampaignMapViewProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <strong className="text-sm font-bold text-white group-hover:text-cyan-300 transition">
-                  {profile.name}
+                  Player Profile
                 </strong>
                 <span className="text-[10px] bg-cyan-950 text-cyan-300 border border-cyan-700 px-1.5 py-0.2 rounded font-bold">
                   Lv.{profile.level}
                 </span>
               </div>
-              <span className="text-xs text-slate-400 block">{profile.consultantRank}</span>
+              <span className="text-xs text-slate-400 block">{profile.name} - not the start button</span>
               <div className="flex items-center gap-2 mt-1 text-xs font-mono font-bold">
                 <span className="text-emerald-400">${profile.careerProfit}</span>
                 <span className="text-slate-500">•</span>
@@ -80,10 +79,27 @@ export const CampaignMapView: React.FC<CampaignMapViewProps> = ({
         </div>
       </div>
 
-      {/* Featured Mode Select Banner */}
+      {/* Featured Mode Select */}
+      <div className="space-y-4">
+        <div className="text-center sm:text-left">
+          <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-900 border border-amber-200 px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider shadow-sm">
+            <Zap className="w-4 h-4" />
+            Start Here
+          </div>
+          <h2 className="mt-3 text-2xl sm:text-4xl font-black text-slate-950 tracking-tight">
+            Choose one of these two options
+          </h2>
+          <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl">
+            Want a fast game with business decisions? Pick the tycoon sim. Want a class assignment with written proof? Pick the case pitch.
+          </p>
+        </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Card A: 5-Day Live Tycoon Simulation */}
-        <div className="bg-gradient-to-br from-cyan-900/40 via-slate-900 to-slate-900 border border-cyan-500/40 rounded-3xl p-5 text-white flex flex-col justify-between shadow-lg relative overflow-hidden">
+        <div className="bg-gradient-to-br from-cyan-900/40 via-slate-900 to-slate-900 border-2 border-cyan-500/70 rounded-3xl p-5 text-white flex flex-col justify-between shadow-xl relative overflow-hidden">
+          <span className="absolute right-4 top-4 bg-cyan-300 text-slate-950 text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded-full">
+            Option 1
+          </span>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <span className="p-2 bg-cyan-500/20 text-cyan-400 rounded-xl">
@@ -93,7 +109,7 @@ export const CampaignMapView: React.FC<CampaignMapViewProps> = ({
             </div>
             <h3 className="text-lg font-black text-white">5-Day Turnaround Sprint</h3>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Full interactive day-by-day management: set pricing levers, upgrade equipment, handle rush hours & customer reviews!
+              Play like a business owner. Set prices, hire help, buy upgrades, handle surprises, and watch profit change day by day.
             </p>
           </div>
 
@@ -111,7 +127,10 @@ export const CampaignMapView: React.FC<CampaignMapViewProps> = ({
         </div>
 
         {/* Card B: Classroom Board Case Study */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-5 flex flex-col justify-between shadow-xs">
+        <div className="bg-white border-2 border-indigo-200 rounded-3xl p-5 flex flex-col justify-between shadow-lg relative">
+          <span className="absolute right-4 top-4 bg-indigo-100 text-indigo-800 text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded-full">
+            Option 2
+          </span>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <span className="p-2 bg-indigo-50 text-indigo-600 rounded-xl">
@@ -121,7 +140,7 @@ export const CampaignMapView: React.FC<CampaignMapViewProps> = ({
             </div>
             <h3 className="text-lg font-black text-slate-900">Executive Pitch & Proofs</h3>
             <p className="text-xs text-slate-500 leading-relaxed">
-              Analyze starting baselines, compare 3 strategy cards, prove the math equation ($R - E = P$), and defend your pitch.
+              Work like a consultant. Compare strategy cards, show the math for Revenue - Expenses = Profit, and explain your recommendation.
             </p>
           </div>
 
@@ -137,6 +156,7 @@ export const CampaignMapView: React.FC<CampaignMapViewProps> = ({
             <ChevronRight className="w-4 h-4" />
           </button>
         </div>
+      </div>
       </div>
 
       {/* Campaign Mission Cards Grid / Path */}
@@ -263,4 +283,3 @@ export const CampaignMapView: React.FC<CampaignMapViewProps> = ({
     </div>
   );
 };
-
